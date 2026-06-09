@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Premium GPA and CGPA calculator for Diploma Computer Engineering (Regulation 2023, DOTE Tamil Nadu) with history tracking and visual trend analysis.">
-  <title>DOTE Diploma Computer Engineering GPA Dashboard</title>
+  <meta name="description" content="Premium GPA and CGPA calculator for Diploma Computer Engineering (Regulation 2023) with history tracking and visual trend analysis.">
+  <title>Diploma Computer Engineering GPA Dashboard</title>
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1102,6 +1102,27 @@
       padding-right: 6px;
     }
 
+    .app-footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.8125rem;
+      color: var(--text-tertiary);
+    }
+    
+    .app-footer a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition-base);
+    }
+    
+    .app-footer a:hover {
+      color: var(--primary-hover);
+      text-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
+    }
+
     /* Print styles */
     .print-only {
       display: none;
@@ -1199,7 +1220,7 @@
     <header>
       <div class="brand-section">
         <h1>Gradely</h1>
-        <p>Diploma Computer Engineering — Regulation 2023, DOTE Tamil Nadu</p>
+        <p>Diploma Computer Engineering — Regulation 2023 (Prepared by students for convenience)</p>
       </div>
       
       <div class="header-controls">
@@ -1289,7 +1310,7 @@
           <div class="metric-card">
             <div class="label">Total Credits</div>
             <div class="val" id="dash-credits">0</div>
-            <div class="desc">Regulation 2023 DOTE</div>
+            <div class="desc">Regulation 2023</div>
           </div>
           <div class="metric-card">
             <div class="label">Division</div>
@@ -1368,7 +1389,7 @@
             Regulation 2023 Scheme Details
           </h2>
           <p>
-            The Directorate of Technical Education (DOTE) Tamil Nadu governs the Curriculum and Grading system for diploma courses in computer engineering under Regulation 2023.
+            Curriculum and Grading system guidelines for Diploma Computer Engineering under Regulation 2023. Prepared by students for convenience.
           </p>
 
           <h3>Grading & Grade Points System</h3>
@@ -1426,6 +1447,11 @@
       </div>
     </div>
 
+    <!-- Cool Student-centric developer footer -->
+    <footer class="app-footer">
+      <p>Prepared by students for convenience • Created by <a href="https://kaushaldev.qzz.io" target="_blank">Kaushal Dev</a></p>
+    </footer>
+
   </div>
 
   <!-- Save Modal dialog -->
@@ -1459,7 +1485,7 @@
     const GRADES = ['O','A+','A','B+','B','C','RA'];
     const GP = {O:10,'A+':9,A:8,'B+':7,B:6,C:5,RA:0};
 
-    // Syllabus definition for computer engineering, Regulation 2023 DOTE TN
+    // Syllabus definition for computer engineering, Regulation 2023
     const SEMS = {
       1: {
         label: 'Semester I',
@@ -1707,7 +1733,7 @@
       
       if(cgpaEl && creditsEl) {
         cgpaEl.textContent = cgpa.toFixed(2);
-        creditsEl.textContent = `${totalCredits} Credits Earned`;
+        creditsEl.textContent = `${totalCredits} / 120 Credits Earned`;
       }
       
       return {
@@ -1918,7 +1944,7 @@
               ${rec.mode === 'lateral' ? 'Lateral Entry' : 'Regular Route'}
             </span>
           </td>
-          <td>${rec.credits} Credits</td>
+          <td>${rec.credits} / 120</td>
           <td><span class="history-cgpa">${rec.cgpa.toFixed(2)}</span></td>
           <td>
             <div class="actions-cell">
@@ -1940,7 +1966,7 @@
       // Calculate consolidated analytics from the latest saved calculation
       const latest = history[0];
       document.getElementById('dash-cgpa').textContent = latest.cgpa.toFixed(2);
-      document.getElementById('dash-credits').textContent = latest.credits;
+      document.getElementById('dash-credits').textContent = latest.credits + ' / 120';
       
       // Calculate Divisions & standings
       let standing = 'Satisfactory';
@@ -2222,13 +2248,13 @@
         const printContainer = document.getElementById('print-area');
         printContainer.innerHTML = `
           <div class="print-title">CONSOLIDATED STATEMENT OF GRADES</div>
-          <div class="print-subtitle">State Board of Technical Education & Training, Tamil Nadu</div>
+          <div class="print-subtitle">Diploma in Computer Engineering (Regulation 2023)</div>
           
           <div class="print-meta-grid">
             <div>
               <strong>Student Name:</strong> ${record.name}<br>
               <strong>Curriculum Scheme:</strong> Computer Engineering (Regulation 2023)<br>
-              <strong>Evaluation System:</strong> DOTE Credit-Based System
+              <strong>Evaluation System:</strong> Credit-Based Grading
             </div>
             <div style="text-align: right;">
               <strong>Entry Scheme:</strong> ${record.mode === 'lateral' ? 'Lateral Entry' : 'Regular'}<br>
@@ -2242,7 +2268,7 @@
           <div class="print-summary">
             <div class="print-summary-box">
               <div style="font-size: 13px; color: #444;">Credits Accumulated</div>
-              <div style="font-size: 20px; font-weight: bold; margin-bottom: 8px;">${record.credits}</div>
+              <div style="font-size: 20px; font-weight: bold; margin-bottom: 8px;">${record.credits} / 120</div>
               <div style="font-size: 13px; color: #444;">Consolidated CGPA</div>
               <div style="font-size: 26px; font-weight: bold; color: black;">${record.cgpa.toFixed(2)}</div>
               <div style="font-size: 13px; font-weight: bold; margin-top: 4px;">Classification: ${division}</div>
@@ -2250,7 +2276,7 @@
           </div>
           
           <div class="print-footer">
-            <div>Prepared by: DOTE GPA Dashboard</div>
+            <div>Grade Sheet Statement</div>
             <div style="text-align: right; border-top: 1px solid #333; width: 200px; padding-top: 4px;">
               Student Signature
             </div>
