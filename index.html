@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Premium GPA and CGPA calculator for Diploma Computer Engineering (Regulation 2023) with history tracking and visual trend analysis.">
+  <meta name="description"
+    content="Premium GPA and CGPA calculator for Diploma Computer Engineering (Regulation 2023) with history tracking and visual trend analysis.">
   <title>Diploma Computer Engineering GPA Dashboard</title>
-  
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
   <style>
     /* CSS Design System variables */
     :root {
@@ -22,7 +26,7 @@
       --text-primary: #F3F4F6;
       --text-secondary: #9CA3AF;
       --text-tertiary: #6B7280;
-      
+
       /* Accent Colors */
       --primary: #6366F1;
       --primary-hover: #4F46E5;
@@ -34,15 +38,15 @@
       --warning-bg: rgba(245, 158, 11, 0.1);
       --danger: #EF4444;
       --danger-bg: rgba(239, 68, 68, 0.1);
-      
+
       --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --font-display: 'Outfit', sans-serif;
-      
+
       --radius-xl: 20px;
       --radius-lg: 16px;
       --radius-md: 12px;
       --radius-sm: 8px;
-      
+
       --glow-primary: rgba(99, 102, 241, 0.15);
       --transition-base: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -53,7 +57,7 @@
       margin: 0;
       padding: 0;
     }
-    
+
     body {
       background-color: var(--bg-main);
       color: var(--text-primary);
@@ -70,13 +74,16 @@
       width: 8px;
       height: 8px;
     }
+
     ::-webkit-scrollbar-track {
       background: var(--bg-main);
     }
+
     ::-webkit-scrollbar-thumb {
       background: rgba(255, 255, 255, 0.1);
       border-radius: var(--radius-sm);
     }
+
     ::-webkit-scrollbar-thumb:hover {
       background: rgba(255, 255, 255, 0.2);
     }
@@ -86,7 +93,7 @@
       position: absolute;
       width: 400px;
       height: 400px;
-      background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, rgba(0,0,0,0) 70%);
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
       top: -100px;
       right: -100px;
       z-index: -1;
@@ -97,7 +104,7 @@
       position: absolute;
       width: 500px;
       height: 500px;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, rgba(0,0,0,0) 70%);
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, rgba(0, 0, 0, 0) 70%);
       bottom: -150px;
       left: -150px;
       z-index: -1;
@@ -232,6 +239,7 @@
         opacity: 0;
         transform: translateY(10px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -479,7 +487,7 @@
       inset: 0;
       border-radius: var(--radius-lg);
       padding: 1px;
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.3) 0%, rgba(0,0,0,0) 60%, rgba(14, 165, 233, 0.3) 100%);
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.3) 0%, rgba(0, 0, 0, 0) 60%, rgba(14, 165, 233, 0.3) 100%);
       -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
@@ -995,6 +1003,7 @@
         opacity: 0;
         transform: translateY(12px) scale(0.95);
       }
+
       to {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -1010,6 +1019,7 @@
         opacity: 1;
         transform: translateY(0);
       }
+
       to {
         opacity: 0;
         transform: translateY(-12px);
@@ -1054,7 +1064,8 @@
       color: var(--primary);
     }
 
-    .info-card p, .info-card li {
+    .info-card p,
+    .info-card li {
       font-size: 0.8125rem;
       color: var(--text-secondary);
       line-height: 1.6;
@@ -1078,7 +1089,7 @@
       font-size: 0.8125rem;
       color: var(--text-primary);
     }
-    
+
     .formula-fraction {
       display: inline-flex;
       flex-direction: column;
@@ -1086,7 +1097,7 @@
       vertical-align: middle;
       font-weight: 600;
     }
-    
+
     .numerator {
       border-bottom: 1px solid var(--text-secondary);
       padding-bottom: 2px;
@@ -1094,7 +1105,7 @@
       padding-left: 6px;
       padding-right: 6px;
     }
-    
+
     .denominator {
       padding-top: 2px;
       text-align: center;
@@ -1110,14 +1121,14 @@
       font-size: 0.8125rem;
       color: var(--text-tertiary);
     }
-    
+
     .app-footer a {
       color: var(--primary);
       text-decoration: none;
       font-weight: 600;
       transition: var(--transition-base);
     }
-    
+
     .app-footer a:hover {
       color: var(--primary-hover);
       text-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
@@ -1134,8 +1145,13 @@
         color: black !important;
         font-family: 'Times New Roman', Times, serif;
       }
-      
-      .container, .modal-overlay, .toast-container, header, .bg-glow, .bg-glow-left {
+
+      .container,
+      .modal-overlay,
+      .toast-container,
+      header,
+      .bg-glow,
+      .bg-glow-left {
         display: none !important;
       }
 
@@ -1175,7 +1191,8 @@
         margin-bottom: 1.5rem;
       }
 
-      .print-table th, .print-table td {
+      .print-table th,
+      .print-table td {
         border: 1px solid black;
         padding: 6px 8px;
         text-align: left;
@@ -1208,6 +1225,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- Background Glow FX -->
@@ -1215,14 +1233,14 @@
   <div class="bg-glow-left"></div>
 
   <div class="container">
-    
+
     <!-- Top Header section -->
     <header>
       <div class="brand-section">
         <h1>Gradely</h1>
         <p>Diploma Computer Engineering — Regulation 2023 (Prepared by students for convenience)</p>
       </div>
-      
+
       <div class="header-controls">
         <!-- Entry Mode Switcher -->
         <div class="entry-toggle">
@@ -1239,15 +1257,31 @@
         <!-- Navigation Tabs -->
         <div class="tabs-nav">
           <button class="tab-btn active" onclick="switchTab('calculator-tab')">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <line x1="9" y1="3" x2="9" y2="21" />
+              <line x1="15" y1="3" x2="15" y2="21" />
+              <line x1="3" y1="9" x2="21" y2="9" />
+              <line x1="3" y1="15" x2="21" y2="15" />
+            </svg>
             Calculator
           </button>
           <button class="tab-btn" onclick="switchTab('dashboard-tab')">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3v18h18" />
+              <path d="m19 9-5 5-4-4-3 3" />
+            </svg>
             Dashboard & History
           </button>
           <button class="tab-btn" onclick="switchTab('help-tab')">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+              <line x1="12" y1="17" x2="12.01" y2="17" />
+            </svg>
             Scheme Info
           </button>
         </div>
@@ -1257,7 +1291,7 @@
     <!-- 1. CALCULATOR TAB -->
     <div id="calculator-tab" class="tab-content active">
       <div class="calculator-layout">
-        
+
         <!-- Semesters card deck -->
         <div id="semesters-container" class="semesters-grid">
           <!-- Loaded by JS -->
@@ -1283,11 +1317,22 @@
 
           <div class="action-buttons">
             <button class="btn btn-primary" onclick="triggerSaveFlow()">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+                <polyline points="17 21 17 13 7 13 7 21" />
+                <polyline points="7 3 7 8 15 8" />
+              </svg>
               Save to History
             </button>
             <button class="btn btn-secondary" onclick="resetCalculator()">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M16 3h5v5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 21H3v-5"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+                <path d="M16 3h5v5" />
+                <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+                <path d="M8 21H3v-5" />
+              </svg>
               Clear All Fields
             </button>
           </div>
@@ -1299,7 +1344,7 @@
     <!-- 2. ANALYTICS & HISTORY TAB -->
     <div id="dashboard-tab" class="tab-content">
       <div class="dashboard-grid">
-        
+
         <!-- Metrics display cards -->
         <div class="metrics-row">
           <div class="metric-card">
@@ -1354,7 +1399,8 @@
         <div class="history-card">
           <div class="panel-header">
             <h2>Saved Student Calculations</h2>
-            <button class="btn btn-secondary" style="width: auto; padding: 6px 12px; font-size: 0.75rem;" onclick="clearAllHistory()">
+            <button class="btn btn-secondary" style="width: auto; padding: 6px 12px; font-size: 0.75rem;"
+              onclick="clearAllHistory()">
               Delete All History
             </button>
           </div>
@@ -1382,14 +1428,22 @@
     <!-- 3. SCHEME/INFO TAB -->
     <div id="help-tab" class="tab-content">
       <div class="info-grid">
-        
+
         <div class="info-card">
           <h2>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10 9 9 9 8 9" />
+            </svg>
             Regulation 2023 Scheme Details
           </h2>
           <p>
-            Curriculum and Grading system guidelines for Diploma Computer Engineering under Regulation 2023. Prepared by students for convenience.
+            Curriculum and Grading system guidelines for Diploma Computer Engineering under Regulation 2023. Prepared by
+            students for convenience.
           </p>
 
           <h3>Grading & Grade Points System</h3>
@@ -1405,19 +1459,23 @@
 
           <h3>Entry Options</h3>
           <ul>
-            <li><strong>Regular Entry:</strong> Students complete 6 semesters starting from Semester I. Total credits are accumulated across all subjects.</li>
-            <li><strong>Lateral Entry:</strong> Eligible students join directly in the second year (Semester III). Semesters I and II are excluded from both credit and CGPA evaluations.</li>
+            <li><strong>Regular Entry:</strong> Students complete 6 semesters starting from Semester I. Total credits
+              are accumulated across all subjects.</li>
+            <li><strong>Lateral Entry:</strong> Eligible students join directly in the second year (Semester III).
+              Semesters I and II are excluded from both credit and CGPA evaluations.</li>
           </ul>
 
           <h3>Advanced Skills Certification (ASC)</h3>
           <p>
-            Certain semesters include Advanced Skills Certifications (ASC) marked with <strong>(NA)</strong> option. These courses can be marked as "NA" (Not Applicable) if they were not taken, in which case their credits are bypassed.
+            Certain semesters include Advanced Skills Certifications (ASC) marked with <strong>(NA)</strong> option.
+            These courses can be marked as "NA" (Not Applicable) if they were not taken, in which case their credits are
+            bypassed.
           </p>
         </div>
 
         <div class="info-card">
           <h2>Formula Guidelines</h2>
-          
+
           <h3>Semester GPA (SGPA)</h3>
           <div class="formula-box">
             <span>SGPA =</span>
@@ -1426,7 +1484,7 @@
               <span class="denominator">Σ (Course Credits)</span>
             </span>
           </div>
-          
+
           <h3>Cumulative GPA (CGPA)</h3>
           <div class="formula-box">
             <span>CGPA =</span>
@@ -1449,7 +1507,7 @@
 
     <!-- Cool Student-centric developer footer -->
     <footer class="app-footer">
-      <p>Prepared by students for convenience • Created by <a href="https://kaushaldev.qzz.io" target="_blank">Kaushal Dev</a></p>
+      <p>Created and Developed by <a href="https://kaushaldev.qzz.io" target="_blank">Kaushal Dev</a></p>
     </footer>
 
   </div>
@@ -1458,13 +1516,15 @@
   <div id="save-modal-overlay" class="modal-overlay">
     <div class="modal">
       <div class="modal-title">Save Academic Record</div>
-      <div class="modal-desc">Provide a student name or a reference tag to save this GPA calculation in your browser history.</div>
-      
+      <div class="modal-desc">Provide a student name or a reference tag to save this GPA calculation in your browser
+        history.</div>
+
       <div class="form-group">
         <label for="student-name-input">Student Name / Label</label>
-        <input type="text" id="student-name-input" class="form-input" placeholder="e.g. Rahul S (Lateral)" maxlength="30">
+        <input type="text" id="student-name-input" class="form-input" placeholder="e.g. Rahul S (Lateral)"
+          maxlength="30">
       </div>
-      
+
       <div class="modal-actions">
         <button class="btn btn-secondary" onclick="closeSaveModal()">Cancel</button>
         <button class="btn btn-primary" onclick="saveCalculation()">Save Calculations</button>
@@ -1482,81 +1542,81 @@
 
   <script>
     // Grades Database & Grade Point mapping
-    const GRADES = ['O','A+','A','B+','B','C','RA'];
-    const GP = {O:10,'A+':9,A:8,'B+':7,B:6,C:5,RA:0};
+    const GRADES = ['O', 'A+', 'A', 'B+', 'B', 'C', 'RA'];
+    const GP = { O: 10, 'A+': 9, A: 8, 'B+': 7, B: 6, C: 5, RA: 0 };
 
     // Syllabus definition for computer engineering, Regulation 2023
     const SEMS = {
       1: {
         label: 'Semester I',
         subjects: [
-          {name:'Tamil Marabu', credits:2, na:false},
-          {name:'Basic Mathematics', credits:4, na:false},
-          {name:'Basic Physics', credits:3, na:false},
-          {name:'Basic Chemistry', credits:3, na:false},
-          {name:'Communicative English I', credits:2, na:false},
-          {name:'Basic Workshop Practices', credits:2, na:false},
-          {name:'Digital Workplace Skills', credits:2, na:false},
-          {name:'Basic English for Employability', credits:2, na:true},
+          { name: 'Tamil Marabu', credits: 2, na: false },
+          { name: 'Basic Mathematics', credits: 4, na: false },
+          { name: 'Basic Physics', credits: 3, na: false },
+          { name: 'Basic Chemistry', credits: 3, na: false },
+          { name: 'Communicative English I', credits: 2, na: false },
+          { name: 'Basic Workshop Practices', credits: 2, na: false },
+          { name: 'Digital Workplace Skills', credits: 2, na: false },
+          { name: 'Basic English for Employability', credits: 2, na: true },
         ]
       },
       2: {
         label: 'Semester II',
         subjects: [
-          {name:'Tamils and Technology', credits:2, na:false},
-          {name:'Basics of Computer Engineering', credits:3, na:false},
-          {name:'Applied Mathematics – II', credits:3, na:false},
-          {name:'Applied Physics – II', credits:2, na:false},
-          {name:'Applied Chemistry – II', credits:2, na:false},
-          {name:'Basic Engineering Practices', credits:2, na:false},
-          {name:'Drafting Practices', credits:2, na:false},
-          {name:'Communicative English – II', credits:2, na:false},
-          {name:'Advanced Skills Certification – II', credits:2, na:true},
+          { name: 'Tamils and Technology', credits: 2, na: false },
+          { name: 'Basics of Computer Engineering', credits: 3, na: false },
+          { name: 'Applied Mathematics – II', credits: 3, na: false },
+          { name: 'Applied Physics – II', credits: 2, na: false },
+          { name: 'Applied Chemistry – II', credits: 2, na: false },
+          { name: 'Basic Engineering Practices', credits: 2, na: false },
+          { name: 'Drafting Practices', credits: 2, na: false },
+          { name: 'Communicative English – II', credits: 2, na: false },
+          { name: 'Advanced Skills Certification – II', credits: 2, na: true },
         ]
       },
       3: {
         label: 'Semester III',
         subjects: [
-          {name:'Digital Logic Design', credits:3, na:false},
-          {name:'RDBMS', credits:4, na:false},
-          {name:'Digital Logic Design Lab', credits:2, na:false},
-          {name:'C Programming', credits:3, na:false},
-          {name:'Web Designing', credits:3, na:false},
-          {name:'Operating Systems', credits:2, na:false},
-          {name:'Advanced Skills Certification – 3', credits:2, na:true},
+          { name: 'Digital Logic Design', credits: 3, na: false },
+          { name: 'RDBMS', credits: 4, na: false },
+          { name: 'Digital Logic Design Lab', credits: 2, na: false },
+          { name: 'C Programming', credits: 3, na: false },
+          { name: 'Web Designing', credits: 3, na: false },
+          { name: 'Operating Systems', credits: 2, na: false },
+          { name: 'Advanced Skills Certification – 3', credits: 2, na: true },
         ]
       },
       4: {
         label: 'Semester IV',
         subjects: [
-          {name:'Computer Networks and Security', credits:3, na:false},
-          {name:'Data Structures Using Python', credits:4, na:false},
-          {name:'Java Programming', credits:4, na:false},
-          {name:'Python Programming', credits:3, na:false},
-          {name:'E-Publishing Tools', credits:3, na:false},
-          {name:'Scripting Languages', credits:3, na:false},
-          {name:'Advanced Skills Certification – 4', credits:2, na:true},
+          { name: 'Computer Networks and Security', credits: 3, na: false },
+          { name: 'Data Structures Using Python', credits: 4, na: false },
+          { name: 'Java Programming', credits: 4, na: false },
+          { name: 'Python Programming', credits: 3, na: false },
+          { name: 'E-Publishing Tools', credits: 3, na: false },
+          { name: 'Scripting Languages', credits: 3, na: false },
+          { name: 'Advanced Skills Certification – 4', credits: 2, na: true },
         ]
       },
       5: {
         label: 'Semester V',
         subjects: [
-          {name:'Cloud Computing', credits:3, na:false},
-          {name:'Elective – 1 (Program Elective)', credits:3, na:false},
-          {name:'Internet of Things & Digital Twins', credits:2, na:false},
-          {name:'Computer Hardware and Networking', credits:3, na:false},
-          {name:'Elective – 2 (Program Elective)', credits:3, na:false},
-          {name:'Innovation and Startup', credits:2, na:false},
-          {name:'Industrial Training (Summer Vacation)', credits:2, na:false},
-          {name:'Advanced Skills Certification – 5', credits:2, na:true},
+          { name: 'Cloud Computing', credits: 3, na: false },
+          { name: 'Elective – 1 (Program Elective)', credits: 3, na: false },
+          { name: 'Internet of Things & Digital Twins', credits: 2, na: false },
+          { name: 'Computer Hardware and Networking', credits: 3, na: false },
+          { name: 'Elective – 2 (Program Elective)', credits: 3, na: false },
+          { name: 'Innovation and Startup', credits: 2, na: false },
+          { name: 'Industrial Training (Summer Vacation)', credits: 2, na: false },
+          { name: 'Advanced Skills Certification – 5', credits: 2, na: true },
         ]
       },
       6: {
         label: 'Semester VI',
         subjects: [
-          {name:'Elective – 3 / Pathway (Open Elective)', credits:3, na:false},
-          {name:'Elective – 4 / Specialisation (Open Elective)', credits:3, na:false},
-          {name:'In-house Project / Internship / Fellowship', credits:12, na:false},
+          { name: 'Elective – 3 / Pathway (Open Elective)', credits: 3, na: false },
+          { name: 'Elective – 4 / Specialisation (Open Elective)', credits: 3, na: false },
+          { name: 'In-house Project / Internship / Fellowship', credits: 12, na: false },
         ]
       }
     };
@@ -1566,9 +1626,9 @@
       const container = document.getElementById('toast-container');
       const toast = document.createElement('div');
       toast.className = `toast toast-${type}`;
-      
+
       let icon = '';
-      if(type === 'success') {
+      if (type === 'success') {
         icon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>';
       } else if (type === 'warning') {
         icon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>';
@@ -1588,7 +1648,7 @@
     // HTML option tags generation
     function gradeOpts(na) {
       let o = '<option value="">—</option>';
-      if(na) { o += '<option value="NA">NA</option>'; }
+      if (na) { o += '<option value="NA">NA</option>'; }
       GRADES.forEach(g => o += `<option value="${g}">${g}</option>`);
       return o;
     }
@@ -1598,8 +1658,8 @@
       const mode = document.querySelector('input[name="entry"]:checked').value;
       const startSem = mode === 'lateral' ? 3 : 1;
       let html = '';
-      
-      for(let s = startSem; s <= 6; s++) {
+
+      for (let s = startSem; s <= 6; s++) {
         const sem = SEMS[s];
         html += `
         <div class="sem-card">
@@ -1624,7 +1684,7 @@
               <span style="text-align:center">Cr.</span>
               <span>Grade</span>
             </div>`;
-            
+
         sem.subjects.forEach((sub, i) => {
           html += `
             <div class="subject-row">
@@ -1635,12 +1695,12 @@
               </select>
             </div>`;
         });
-        
+
         html += `
           </div>
         </div>`;
       }
-      
+
       document.getElementById('semesters-container').innerHTML = html;
       calculateRealtime();
     }
@@ -1649,14 +1709,14 @@
     function setSemesterAllO(semId) {
       const sem = SEMS[semId];
       if (!sem) return;
-      
+
       sem.subjects.forEach((sub, i) => {
         const select = document.getElementById(`g-${semId}-${i}`);
-        if(select) {
+        if (select) {
           select.value = 'O';
         }
       });
-      
+
       calculateRealtime();
       showToast(`Set all subjects in Semester ${semId} to O grade`, 'success');
     }
@@ -1666,43 +1726,43 @@
       const mode = document.querySelector('input[name="entry"]:checked').value;
       const startSem = mode === 'lateral' ? 3 : 1;
       let totalPoints = 0, totalCredits = 0;
-      
+
       // Calculate subjects filling progress
       let totalSubjects = 0;
       let filledSubjects = 0;
-      
-      for(let s = startSem; s <= 6; s++) {
+
+      for (let s = startSem; s <= 6; s++) {
         const sem = SEMS[s];
         let sPoints = 0, sCredits = 0;
         let semFilled = true;
-        
+
         sem.subjects.forEach((sub, i) => {
           totalSubjects++;
           const select = document.getElementById(`g-${s}-${i}`);
-          if(!select) return;
+          if (!select) return;
           const val = select.value;
-          
-          if(val !== '') {
+
+          if (val !== '') {
             filledSubjects++;
           }
-          
-          if(sub.na && val === 'NA') return;
-          if(!val || val === '') {
+
+          if (sub.na && val === 'NA') return;
+          if (!val || val === '') {
             semFilled = false;
             return;
           }
-          
+
           sPoints += GP[val] * sub.credits;
           sCredits += sub.credits;
         });
-        
+
         const sgpaBadge = document.getElementById(`sgpa-${s}`);
-        if(sgpaBadge) {
+        if (sgpaBadge) {
           if (sCredits > 0 && semFilled) {
             const sgpa = sPoints / sCredits;
             sgpaBadge.textContent = `SGPA: ${sgpa.toFixed(2)}`;
             sgpaBadge.style.color = 'var(--success)';
-          } else if(sCredits > 0 && filledSubjects > 0) {
+          } else if (sCredits > 0 && filledSubjects > 0) {
             const sgpa = sPoints / sCredits;
             sgpaBadge.textContent = `SGPA: ${sgpa.toFixed(2)} (Partial)`;
             sgpaBadge.style.color = 'var(--warning)';
@@ -1711,31 +1771,31 @@
             sgpaBadge.style.color = 'var(--text-tertiary)';
           }
         }
-        
+
         totalPoints += sPoints;
         totalCredits += sCredits;
       }
-      
+
       // Update progress calculations
       const progressPercent = totalSubjects > 0 ? Math.round((filledSubjects / totalSubjects) * 100) : 0;
       const progressFill = document.getElementById('progress-fill');
       const progressText = document.getElementById('progress-percent');
-      
-      if(progressFill && progressText) {
+
+      if (progressFill && progressText) {
         progressFill.style.width = `${progressPercent}%`;
         progressText.textContent = `${filledSubjects}/${totalSubjects} Subjects (${progressPercent}%)`;
       }
-      
+
       // Update CGPA panel
       const cgpa = totalCredits > 0 ? (totalPoints / totalCredits) : 0;
       const cgpaEl = document.getElementById('calc-realtime-cgpa');
       const creditsEl = document.getElementById('calc-realtime-credits');
-      
-      if(cgpaEl && creditsEl) {
+
+      if (cgpaEl && creditsEl) {
         cgpaEl.textContent = cgpa.toFixed(2);
         creditsEl.textContent = `${totalCredits} / 120 Credits Earned`;
       }
-      
+
       return {
         allFilled: (filledSubjects === totalSubjects),
         cgpa: cgpa,
@@ -1747,11 +1807,11 @@
     // Modal Operations
     function triggerSaveFlow() {
       const { allFilled } = calculateRealtime();
-      if(!allFilled) {
+      if (!allFilled) {
         showToast('Please fill out grades for all subjects before saving.', 'warning');
         return;
       }
-      
+
       document.getElementById('student-name-input').value = '';
       document.getElementById('save-modal-overlay').classList.add('active');
       document.getElementById('student-name-input').focus();
@@ -1764,26 +1824,26 @@
     // LocalStorage Operations
     function saveCalculation() {
       let nameInput = document.getElementById('student-name-input').value.trim();
-      if(nameInput === '') {
+      if (nameInput === '') {
         nameInput = `Student (${new Date().toLocaleDateString()})`;
       }
-      
+
       const mode = document.querySelector('input[name="entry"]:checked').value;
       const startSem = mode === 'lateral' ? 3 : 1;
       const { cgpa, totalCredits, totalPoints } = calculateRealtime();
-      
+
       // Collect all grades in current layout
       const savedGrades = {};
-      for(let s = startSem; s <= 6; s++) {
+      for (let s = startSem; s <= 6; s++) {
         const sem = SEMS[s];
         sem.subjects.forEach((sub, i) => {
           const select = document.getElementById(`g-${s}-${i}`);
-          if(select) {
+          if (select) {
             savedGrades[`g-${s}-${i}`] = select.value;
           }
         });
       }
-      
+
       const record = {
         id: 'rec_' + Date.now(),
         name: nameInput,
@@ -1794,47 +1854,47 @@
         points: totalPoints,
         grades: savedGrades
       };
-      
+
       let history = [];
       try {
         const raw = localStorage.getItem('gpa_calculator_history');
-        if(raw) history = JSON.parse(raw);
-      } catch(e) {
+        if (raw) history = JSON.parse(raw);
+      } catch (e) {
         console.error(e);
       }
-      
+
       history.push(record);
       localStorage.setItem('gpa_calculator_history', JSON.stringify(history));
-      
+
       closeSaveModal();
       showToast('Record saved successfully!', 'success');
-      
+
       // Update dashboard visuals and history list
       loadDashboardData();
-      
+
       // Switch view to dashboard tab
       switchTab('dashboard-tab');
     }
 
     function deleteHistory(id) {
-      if(!confirm('Are you sure you want to delete this record?')) return;
-      
+      if (!confirm('Are you sure you want to delete this record?')) return;
+
       try {
         const raw = localStorage.getItem('gpa_calculator_history');
-        if(raw) {
+        if (raw) {
           let history = JSON.parse(raw);
           history = history.filter(item => item.id !== id);
           localStorage.setItem('gpa_calculator_history', JSON.stringify(history));
           showToast('Record deleted.', 'info');
           loadDashboardData();
         }
-      } catch(e) {
+      } catch (e) {
         console.error(e);
       }
     }
 
     function clearAllHistory() {
-      if(!confirm('Are you sure you want to clear the entire history? This cannot be undone.')) return;
+      if (!confirm('Are you sure you want to clear the entire history? This cannot be undone.')) return;
       localStorage.removeItem('gpa_calculator_history');
       showToast('History cleared.', 'info');
       loadDashboardData();
@@ -1844,31 +1904,31 @@
     function loadSavedRecord(id) {
       try {
         const raw = localStorage.getItem('gpa_calculator_history');
-        if(!raw) return;
-        
+        if (!raw) return;
+
         const history = JSON.parse(raw);
         const record = history.find(item => item.id === id);
-        if(!record) return;
-        
+        if (!record) return;
+
         // Match entry mode
         const radio = document.querySelector(`input[name="entry"][value="${record.mode}"]`);
-        if(radio) {
+        if (radio) {
           radio.checked = true;
           renderCalculator(); // Redraws proper semesters count
         }
-        
+
         // Fill saved grades
         Object.keys(record.grades).forEach(key => {
           const select = document.getElementById(key);
-          if(select) {
+          if (select) {
             select.value = record.grades[key];
           }
         });
-        
+
         calculateRealtime();
         switchTab('calculator-tab');
         showToast(`Loaded details for ${record.name}`, 'success');
-      } catch(e) {
+      } catch (e) {
         console.error(e);
         showToast('Error loading record.', 'warning');
       }
@@ -1876,11 +1936,11 @@
 
     // Resets the calculator selectors
     function resetCalculator() {
-      if(!confirm('Are you sure you want to reset all grades?')) return;
-      
+      if (!confirm('Are you sure you want to reset all grades?')) return;
+
       const selects = document.querySelectorAll('.grade-select');
       selects.forEach(select => select.value = '');
-      
+
       calculateRealtime();
       showToast('All fields cleared', 'info');
     }
@@ -1890,13 +1950,13 @@
       let history = [];
       try {
         const raw = localStorage.getItem('gpa_calculator_history');
-        if(raw) history = JSON.parse(raw);
-      } catch(e) {
+        if (raw) history = JSON.parse(raw);
+      } catch (e) {
         console.error(e);
       }
-      
+
       const tbody = document.getElementById('history-rows');
-      if(history.length === 0) {
+      if (history.length === 0) {
         tbody.innerHTML = `
         <tr>
           <td colspan="5">
@@ -1911,23 +1971,23 @@
             </div>
           </td>
         </tr>`;
-        
+
         // Reset dashboard metrics
         document.getElementById('dash-cgpa').textContent = '0.00';
         document.getElementById('dash-credits').textContent = '0';
         document.getElementById('dash-division').textContent = '—';
         document.getElementById('dash-status').textContent = '—';
         document.getElementById('dash-grade-desc').textContent = 'No records saved yet';
-        
+
         // Draw blank chart
         renderChart([]);
         renderGradeDistribution([]);
         return;
       }
-      
+
       // Sort history items by date descending
-      history.sort((a,b) => b.id.localeCompare(a.id));
-      
+      history.sort((a, b) => b.id.localeCompare(a.id));
+
       // Render records table
       let html = '';
       history.forEach(rec => {
@@ -1962,30 +2022,30 @@
         </tr>`;
       });
       tbody.innerHTML = html;
-      
+
       // Calculate consolidated analytics from the latest saved calculation
       const latest = history[0];
       document.getElementById('dash-cgpa').textContent = latest.cgpa.toFixed(2);
       document.getElementById('dash-credits').textContent = latest.credits + ' / 120';
-      
+
       // Calculate Divisions & standings
       let standing = 'Satisfactory';
       let division = 'Second Class';
       let gradeDesc = 'Satisfactory performance';
-      
-      if(latest.cgpa >= 9.0) {
+
+      if (latest.cgpa >= 9.0) {
         standing = 'Outstanding';
         division = 'Distinction';
         gradeDesc = 'Top tier performance';
-      } else if(latest.cgpa >= 7.50) {
+      } else if (latest.cgpa >= 7.50) {
         standing = 'Excellent';
         division = 'Distinction';
         gradeDesc = 'First Class with Distinction';
-      } else if(latest.cgpa >= 6.50) {
+      } else if (latest.cgpa >= 6.50) {
         standing = 'Very Good';
         division = 'First Class';
         gradeDesc = 'First Class division';
-      } else if(latest.cgpa >= 5.0) {
+      } else if (latest.cgpa >= 5.0) {
         standing = 'Good';
         division = 'Second Class';
         gradeDesc = 'Second Class division';
@@ -1994,18 +2054,18 @@
         division = 'Re-appearance';
         gradeDesc = 'Need improvement';
       }
-      
+
       document.getElementById('dash-status').textContent = standing;
       document.getElementById('dash-division').textContent = division;
       document.getElementById('dash-grade-desc').textContent = gradeDesc;
-      
+
       // Load Trend SVGs and bars
       const badge = document.getElementById('chart-type-badge');
-      if(badge) {
+      if (badge) {
         badge.textContent = latest.mode === 'lateral' ? 'Lateral Route' : 'Regular Route';
         badge.className = `badge ${latest.mode === 'lateral' ? 'badge-lateral' : 'badge-regular'}`;
       }
-      
+
       renderChart(latest);
       renderGradeDistribution(latest);
     }
@@ -2013,51 +2073,51 @@
     // Renders the SVG Line Chart based on a calculations entry
     function renderChart(record) {
       const svg = document.getElementById('trend-svg');
-      if(!svg) return;
-      
-      if(!record || !record.grades) {
+      if (!svg) return;
+
+      if (!record || !record.grades) {
         svg.innerHTML = `
         <text x="300" y="110" fill="var(--text-tertiary)" font-size="14" text-anchor="middle" font-family="var(--font-sans)">
           No records to map
         </text>`;
         return;
       }
-      
+
       const mode = record.mode;
       const startSem = mode === 'lateral' ? 3 : 1;
-      
+
       // Calculate SGPA for each semester of the saved record
       const points = [];
-      for(let s = startSem; s <= 6; s++) {
+      for (let s = startSem; s <= 6; s++) {
         const sem = SEMS[s];
         let sPoints = 0;
         let sCredits = 0;
-        
+
         sem.subjects.forEach((sub, i) => {
           const val = record.grades[`g-${s}-${i}`];
-          if(sub.na && val === 'NA') return;
-          if(val && val !== 'NA' && GP[val] !== undefined) {
+          if (sub.na && val === 'NA') return;
+          if (val && val !== 'NA' && GP[val] !== undefined) {
             sPoints += GP[val] * sub.credits;
             sCredits += sub.credits;
           }
         });
-        
+
         const sgpa = sCredits > 0 ? (sPoints / sCredits) : 0;
         points.push({ sem: s, gpa: sgpa });
       }
-      
+
       const width = 600;
       const height = 200;
       const paddingLeft = 40;
       const paddingRight = 40;
       const paddingTop = 30;
       const paddingBottom = 30;
-      
+
       const chartWidth = width - paddingLeft - paddingRight;
       const chartHeight = height - paddingTop - paddingBottom;
-      
+
       let html = '';
-      
+
       // Draw grid lines
       for (let val = 0; val <= 10; val += 2) {
         const y = height - paddingBottom - (val / 10) * chartHeight;
@@ -2066,14 +2126,14 @@
           <text x="${paddingLeft - 10}" y="${y + 4}" fill="var(--text-tertiary)" font-size="10" font-weight="600" text-anchor="end" font-family="var(--font-sans)">${val}</text>
         `;
       }
-      
+
       const coords = [];
       points.forEach((p, i) => {
         const x = paddingLeft + (i / (points.length - 1)) * chartWidth;
         const y = height - paddingBottom - (p.gpa / 10) * chartHeight;
         coords.push({ x, y, gpa: p.gpa, sem: p.sem });
       });
-      
+
       // Render SVG Area Fill
       if (coords.length > 1) {
         let areaPath = `M ${coords[0].x} ${height - paddingBottom}`;
@@ -2082,7 +2142,7 @@
         });
         areaPath += ` L ${coords[coords.length - 1].x} ${height - paddingBottom} Z`;
         html += `<path d="${areaPath}" fill="url(#chart-gradient)" opacity="0.15" />`;
-        
+
         // Render Line
         let linePath = `M ${coords[0].x} ${coords[0].y}`;
         for (let i = 1; i < coords.length; i++) {
@@ -2090,7 +2150,7 @@
         }
         html += `<path d="${linePath}" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#chart-glow)" />`;
       }
-      
+
       // Dots & Labels
       coords.forEach(c => {
         html += `
@@ -2099,7 +2159,7 @@
           <text x="${c.x}" y="${c.y - 12}" fill="#FFF" font-size="11" font-weight="700" text-anchor="middle" font-family="var(--font-sans)">${c.gpa.toFixed(2)}</text>
         `;
       });
-      
+
       svg.innerHTML = `
         <defs>
           <linearGradient id="chart-gradient" x1="0" y1="0" x2="0" y2="1">
@@ -2118,24 +2178,24 @@
     // Render grade counts breakdown bar charts
     function renderGradeDistribution(record) {
       const container = document.getElementById('distribution-bars');
-      if(!container) return;
-      
-      if(!record || !record.grades) {
+      if (!container) return;
+
+      if (!record || !record.grades) {
         container.innerHTML = '<div style="text-align:center; padding: 2rem 0; color: var(--text-tertiary); font-size:0.8125rem;">No data</div>';
         return;
       }
-      
+
       // Calculate grade frequencies
-      const counts = {O: 0, 'A+': 0, A: 0, 'B+': 0, B: 0, C: 0, RA: 0};
+      const counts = { O: 0, 'A+': 0, A: 0, 'B+': 0, B: 0, C: 0, RA: 0 };
       let totalCount = 0;
-      
+
       Object.values(record.grades).forEach(val => {
-        if(val && val !== 'NA' && counts[val] !== undefined) {
+        if (val && val !== 'NA' && counts[val] !== undefined) {
           counts[val]++;
           totalCount++;
         }
       });
-      
+
       const colors = {
         O: '#6366F1', // Indigo
         'A+': '#3B82F6', // Blue
@@ -2145,12 +2205,12 @@
         C: '#84CC16', // Lime
         RA: '#EF4444' // Rose
       };
-      
+
       let html = '';
       Object.keys(counts).forEach(grade => {
         const count = counts[grade];
         const percent = totalCount > 0 ? (count / totalCount) * 100 : 0;
-        
+
         html += `
         <div class="dist-row">
           <div class="dist-label-container">
@@ -2163,7 +2223,7 @@
           <span class="dist-val">${count}</span>
         </div>`;
       });
-      
+
       container.innerHTML = html;
     }
 
@@ -2171,14 +2231,14 @@
     function switchTab(tabId) {
       document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      
+
       const targetTab = document.getElementById(tabId);
-      if(targetTab) targetTab.classList.add('active');
-      
+      if (targetTab) targetTab.classList.add('active');
+
       // Set active navigation button state
       const buttons = document.querySelectorAll('.tab-btn');
       buttons.forEach(btn => {
-        if(btn.outerHTML.includes(tabId)) {
+        if (btn.outerHTML.includes(tabId)) {
           btn.classList.add('active');
         }
       });
@@ -2188,28 +2248,28 @@
     function triggerPrint(historyId) {
       try {
         const raw = localStorage.getItem('gpa_calculator_history');
-        if(!raw) return;
-        
+        if (!raw) return;
+
         const history = JSON.parse(raw);
         const record = history.find(item => item.id === historyId);
-        if(!record) return;
-        
+        if (!record) return;
+
         const mode = record.mode;
         const startSem = mode === 'lateral' ? 3 : 1;
-        
+
         let semestersMarkup = '';
-        
+
         // Loop and write individual semesters marks distributions
-        for(let s = startSem; s <= 6; s++) {
+        for (let s = startSem; s <= 6; s++) {
           const sem = SEMS[s];
           let sPoints = 0;
           let sCredits = 0;
           let semFilled = true;
           let subjectRows = '';
-          
+
           sem.subjects.forEach((sub, i) => {
             const val = record.grades[`g-${s}-${i}`] || '—';
-            if(val !== 'NA' && val !== '—') {
+            if (val !== 'NA' && val !== '—') {
               sPoints += GP[val] * sub.credits;
               sCredits += sub.credits;
             }
@@ -2220,9 +2280,9 @@
               <td style="text-align: center; font-weight: bold;">${val}</td>
             </tr>`;
           });
-          
+
           const sgpa = sCredits > 0 ? (sPoints / sCredits) : 0;
-          
+
           semestersMarkup += `
           <h4 style="margin-top: 1.25rem; font-size: 14px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">
             ${sem.label} — SGPA: ${sgpa.toFixed(2)}
@@ -2240,11 +2300,11 @@
             </tbody>
           </table>`;
         }
-        
+
         let division = 'Second Class';
-        if(record.cgpa >= 7.5) division = 'First Class with Distinction';
-        else if(record.cgpa >= 6.5) division = 'First Class';
-        
+        if (record.cgpa >= 7.5) division = 'First Class with Distinction';
+        else if (record.cgpa >= 6.5) division = 'First Class';
+
         const printContainer = document.getElementById('print-area');
         printContainer.innerHTML = `
           <div class="print-title">CONSOLIDATED STATEMENT OF GRADES</div>
@@ -2282,9 +2342,9 @@
             </div>
           </div>
         `;
-        
+
         window.print();
-      } catch(e) {
+      } catch (e) {
         console.error(e);
         showToast('Error preparing print preview.', 'warning');
       }
@@ -2304,4 +2364,5 @@
     loadDashboardData();
   </script>
 </body>
+
 </html>
