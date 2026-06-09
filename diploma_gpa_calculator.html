@@ -1066,6 +1066,42 @@
       margin-bottom: 1rem;
     }
 
+    .formula-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      margin: 10px 0;
+      font-size: 0.8125rem;
+      color: var(--text-primary);
+    }
+    
+    .formula-fraction {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      vertical-align: middle;
+      font-weight: 600;
+    }
+    
+    .numerator {
+      border-bottom: 1px solid var(--text-secondary);
+      padding-bottom: 2px;
+      text-align: center;
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+    
+    .denominator {
+      padding-top: 2px;
+      text-align: center;
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+
     /* Print styles */
     .print-only {
       display: none;
@@ -1360,11 +1396,24 @@
 
         <div class="info-card">
           <h2>Formula Guidelines</h2>
+          
           <h3>Semester GPA (SGPA)</h3>
-          <p>$$\text{SGPA} = \frac{\sum (\text{Course Credits} \times \text{Grade Point Obtained})}{\sum \text{Course Credits}}$$</p>
+          <div class="formula-box">
+            <span>SGPA =</span>
+            <span class="formula-fraction">
+              <span class="numerator">Σ (Course Credits × Grade Points)</span>
+              <span class="denominator">Σ (Course Credits)</span>
+            </span>
+          </div>
           
           <h3>Cumulative GPA (CGPA)</h3>
-          <p>$$\text{CGPA} = \frac{\sum (\text{Total Semester Points})}{\sum \text{Total Semester Credits}}$$</p>
+          <div class="formula-box">
+            <span>CGPA =</span>
+            <span class="formula-fraction">
+              <span class="numerator">Σ (All Earned Points)</span>
+              <span class="denominator">Σ (All Course Credits)</span>
+            </span>
+          </div>
 
           <h3>Division Standards</h3>
           <ul>
