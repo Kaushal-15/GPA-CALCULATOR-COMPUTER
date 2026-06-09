@@ -1238,277 +1238,275 @@
     <header>
       <div class="brand-section">
         <h1>Gradely</h1>
-        <p>Diploma Computer Engineering — Regulation 2023 (Prepared by students for convenience)</p>
+        <p>Diploma Computer Engineering — Regulation 2023 (Prepared by Kaushal.S for convenience)</p>
+      </div <div class="header-controls">
+      <!-- Entry Mode Switcher -->
+      <div class="entry-toggle">
+        <label>
+          <input type="radio" name="entry" value="regular" checked>
+          <span>Regular (6 Semesters)</span>
+        </label>
+        <label>
+          <input type="radio" name="entry" value="lateral">
+          <span>Lateral Entry (4 Semesters)</span>
+        </label>
       </div>
 
-      <div class="header-controls">
-        <!-- Entry Mode Switcher -->
-        <div class="entry-toggle">
-          <label>
-            <input type="radio" name="entry" value="regular" checked>
-            <span>Regular (6 Semesters)</span>
-          </label>
-          <label>
-            <input type="radio" name="entry" value="lateral">
-            <span>Lateral Entry (4 Semesters)</span>
-          </label>
-        </div>
-
-        <!-- Navigation Tabs -->
-        <div class="tabs-nav">
-          <button class="tab-btn active" onclick="switchTab('calculator-tab')">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-              <line x1="9" y1="3" x2="9" y2="21" />
-              <line x1="15" y1="3" x2="15" y2="21" />
-              <line x1="3" y1="9" x2="21" y2="9" />
-              <line x1="3" y1="15" x2="21" y2="15" />
-            </svg>
-            Calculator
-          </button>
-          <button class="tab-btn" onclick="switchTab('dashboard-tab')">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 3v18h18" />
-              <path d="m19 9-5 5-4-4-3 3" />
-            </svg>
-            Dashboard & History
-          </button>
-          <button class="tab-btn" onclick="switchTab('help-tab')">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10" />
-              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-              <line x1="12" y1="17" x2="12.01" y2="17" />
-            </svg>
-            Scheme Info
-          </button>
-        </div>
+      <!-- Navigation Tabs -->
+      <div class="tabs-nav">
+        <button class="tab-btn active" onclick="switchTab('calculator-tab')">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+            <line x1="9" y1="3" x2="9" y2="21" />
+            <line x1="15" y1="3" x2="15" y2="21" />
+            <line x1="3" y1="9" x2="21" y2="9" />
+            <line x1="3" y1="15" x2="21" y2="15" />
+          </svg>
+          Calculator
+        </button>
+        <button class="tab-btn" onclick="switchTab('dashboard-tab')">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 3v18h18" />
+            <path d="m19 9-5 5-4-4-3 3" />
+          </svg>
+          Dashboard & History
+        </button>
+        <button class="tab-btn" onclick="switchTab('help-tab')">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+          Scheme Info
+        </button>
       </div>
-    </header>
+  </div>
+  </header>
 
-    <!-- 1. CALCULATOR TAB -->
-    <div id="calculator-tab" class="tab-content active">
-      <div class="calculator-layout">
+  <!-- 1. CALCULATOR TAB -->
+  <div id="calculator-tab" class="tab-content active">
+    <div class="calculator-layout">
 
-        <!-- Semesters card deck -->
-        <div id="semesters-container" class="semesters-grid">
-          <!-- Loaded by JS -->
-        </div>
+      <!-- Semesters card deck -->
+      <div id="semesters-container" class="semesters-grid">
+        <!-- Loaded by JS -->
+      </div>
 
-        <!-- Calculations panel sidebar -->
-        <div class="summary-sidebar">
-          <div class="progress-section">
-            <div class="progress-info">
-              <span>Grades Filled</span>
-              <span id="progress-percent">0/0 Subjects (0%)</span>
-            </div>
-            <div class="progress-bar-container">
-              <div id="progress-fill" class="progress-bar-fill"></div>
-            </div>
+      <!-- Calculations panel sidebar -->
+      <div class="summary-sidebar">
+        <div class="progress-section">
+          <div class="progress-info">
+            <span>Grades Filled</span>
+            <span id="progress-percent">0/0 Subjects (0%)</span>
           </div>
-
-          <div class="gpa-display">
-            <div class="label">Current CGPA</div>
-            <div class="value" id="calc-realtime-cgpa">0.00</div>
-            <div class="stats" id="calc-realtime-credits">0 Credits Earned</div>
-          </div>
-
-          <div class="action-buttons">
-            <button class="btn btn-primary" onclick="triggerSaveFlow()">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
-                <polyline points="17 21 17 13 7 13 7 21" />
-                <polyline points="7 3 7 8 15 8" />
-              </svg>
-              Save to History
-            </button>
-            <button class="btn btn-secondary" onclick="resetCalculator()">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
-                <path d="M16 3h5v5" />
-                <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
-                <path d="M8 21H3v-5" />
-              </svg>
-              Clear All Fields
-            </button>
+          <div class="progress-bar-container">
+            <div id="progress-fill" class="progress-bar-fill"></div>
           </div>
         </div>
 
+        <div class="gpa-display">
+          <div class="label">Current CGPA</div>
+          <div class="value" id="calc-realtime-cgpa">0.00</div>
+          <div class="stats" id="calc-realtime-credits">0 Credits Earned</div>
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn btn-primary" onclick="triggerSaveFlow()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+              <polyline points="17 21 17 13 7 13 7 21" />
+              <polyline points="7 3 7 8 15 8" />
+            </svg>
+            Save to History
+          </button>
+          <button class="btn btn-secondary" onclick="resetCalculator()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+              <path d="M16 3h5v5" />
+              <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+              <path d="M8 21H3v-5" />
+            </svg>
+            Clear All Fields
+          </button>
+        </div>
       </div>
+
     </div>
+  </div>
 
-    <!-- 2. ANALYTICS & HISTORY TAB -->
-    <div id="dashboard-tab" class="tab-content">
-      <div class="dashboard-grid">
+  <!-- 2. ANALYTICS & HISTORY TAB -->
+  <div id="dashboard-tab" class="tab-content">
+    <div class="dashboard-grid">
 
-        <!-- Metrics display cards -->
-        <div class="metrics-row">
-          <div class="metric-card">
-            <div class="label">Overall CGPA</div>
-            <div class="val" id="dash-cgpa">0.00</div>
-            <div class="desc" id="dash-grade-desc">No records saved yet</div>
-          </div>
-          <div class="metric-card">
-            <div class="label">Total Credits</div>
-            <div class="val" id="dash-credits">0</div>
-            <div class="desc">Regulation 2023</div>
-          </div>
-          <div class="metric-card">
-            <div class="label">Division</div>
-            <div class="val" id="dash-division">—</div>
-            <div class="desc">Based on CGPA</div>
-          </div>
-          <div class="metric-card">
-            <div class="label">Standing</div>
-            <div class="val" id="dash-status">—</div>
-            <div class="desc">Academic Status</div>
-          </div>
+      <!-- Metrics display cards -->
+      <div class="metrics-row">
+        <div class="metric-card">
+          <div class="label">Overall CGPA</div>
+          <div class="val" id="dash-cgpa">0.00</div>
+          <div class="desc" id="dash-grade-desc">No records saved yet</div>
         </div>
-
-        <!-- Charts and Grade Breakdown panels -->
-        <div class="analytics-block">
-          <!-- SGPA Trend Panel -->
-          <div class="panel-card">
-            <div class="panel-header">
-              <h2>SGPA Trend Analysis</h2>
-              <span id="chart-type-badge" class="badge badge-regular">Regular Route</span>
-            </div>
-            <div class="chart-container">
-              <svg id="trend-svg" width="100%" height="200" viewBox="0 0 600 220" class="trend-svg">
-                <!-- Programmatically filled -->
-              </svg>
-            </div>
-          </div>
-
-          <!-- Grade Distribution Panel -->
-          <div class="panel-card">
-            <div class="panel-header">
-              <h2>Grade Representation</h2>
-            </div>
-            <div class="distribution-list" id="distribution-bars">
-              <!-- Dynamically rendered bars -->
-            </div>
-          </div>
+        <div class="metric-card">
+          <div class="label">Total Credits</div>
+          <div class="val" id="dash-credits">0</div>
+          <div class="desc">Regulation 2023</div>
         </div>
+        <div class="metric-card">
+          <div class="label">Division</div>
+          <div class="val" id="dash-division">—</div>
+          <div class="desc">Based on CGPA</div>
+        </div>
+        <div class="metric-card">
+          <div class="label">Standing</div>
+          <div class="val" id="dash-status">—</div>
+          <div class="desc">Academic Status</div>
+        </div>
+      </div>
 
-        <!-- Saved calculations list -->
-        <div class="history-card">
+      <!-- Charts and Grade Breakdown panels -->
+      <div class="analytics-block">
+        <!-- SGPA Trend Panel -->
+        <div class="panel-card">
           <div class="panel-header">
-            <h2>Saved Student Calculations</h2>
-            <button class="btn btn-secondary" style="width: auto; padding: 6px 12px; font-size: 0.75rem;"
-              onclick="clearAllHistory()">
-              Delete All History
-            </button>
+            <h2>SGPA Trend Analysis</h2>
+            <span id="chart-type-badge" class="badge badge-regular">Regular Route</span>
           </div>
-          <div class="table-container">
-            <table>
-              <thead>
-                <tr>
-                  <th>Student Info</th>
-                  <th>Entry Mode</th>
-                  <th>Earned Credits</th>
-                  <th>Consolidated CGPA</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody id="history-rows">
-                <!-- Dynamically listed -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- 3. SCHEME/INFO TAB -->
-    <div id="help-tab" class="tab-content">
-      <div class="info-grid">
-
-        <div class="info-card">
-          <h2>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-              <polyline points="14 2 14 8 20 8" />
-              <line x1="16" y1="13" x2="8" y2="13" />
-              <line x1="16" y1="17" x2="8" y2="17" />
-              <polyline points="10 9 9 9 8 9" />
+          <div class="chart-container">
+            <svg id="trend-svg" width="100%" height="200" viewBox="0 0 600 220" class="trend-svg">
+              <!-- Programmatically filled -->
             </svg>
-            Regulation 2023 Scheme Details
-          </h2>
-          <p>
-            Curriculum and Grading system guidelines for Diploma Computer Engineering under Regulation 2023. Prepared by
-            students for convenience.
-          </p>
-
-          <h3>Grading & Grade Points System</h3>
-          <ul>
-            <li><strong>O Grade (Outstanding):</strong> 10 Grade Points</li>
-            <li><strong>A+ Grade (Excellent):</strong> 9 Grade Points</li>
-            <li><strong>A Grade (Very Good):</strong> 8 Grade Points</li>
-            <li><strong>B+ Grade (Good):</strong> 7 Grade Points</li>
-            <li><strong>B Grade (Above Average):</strong> 6 Grade Points</li>
-            <li><strong>C Grade (Satisfactory):</strong> 5 Grade Points</li>
-            <li><strong>RA (Re-Appearance):</strong> 0 Grade Points</li>
-          </ul>
-
-          <h3>Entry Options</h3>
-          <ul>
-            <li><strong>Regular Entry:</strong> Students complete 6 semesters starting from Semester I. Total credits
-              are accumulated across all subjects.</li>
-            <li><strong>Lateral Entry:</strong> Eligible students join directly in the second year (Semester III).
-              Semesters I and II are excluded from both credit and CGPA evaluations.</li>
-          </ul>
-
-          <h3>Advanced Skills Certification (ASC)</h3>
-          <p>
-            Certain semesters include Advanced Skills Certifications (ASC) marked with <strong>(NA)</strong> option.
-            These courses can be marked as "NA" (Not Applicable) if they were not taken, in which case their credits are
-            bypassed.
-          </p>
+          </div>
         </div>
 
-        <div class="info-card">
-          <h2>Formula Guidelines</h2>
-
-          <h3>Semester GPA (SGPA)</h3>
-          <div class="formula-box">
-            <span>SGPA =</span>
-            <span class="formula-fraction">
-              <span class="numerator">Σ (Course Credits × Grade Points)</span>
-              <span class="denominator">Σ (Course Credits)</span>
-            </span>
+        <!-- Grade Distribution Panel -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <h2>Grade Representation</h2>
           </div>
-
-          <h3>Cumulative GPA (CGPA)</h3>
-          <div class="formula-box">
-            <span>CGPA =</span>
-            <span class="formula-fraction">
-              <span class="numerator">Σ (All Earned Points)</span>
-              <span class="denominator">Σ (All Course Credits)</span>
-            </span>
+          <div class="distribution-list" id="distribution-bars">
+            <!-- Dynamically rendered bars -->
           </div>
-
-          <h3>Division Standards</h3>
-          <ul>
-            <li><strong>First Class with Distinction:</strong> CGPA ≥ 7.50</li>
-            <li><strong>First Class:</strong> CGPA ≥ 6.50</li>
-            <li><strong>Second Class:</strong> CGPA ≥ 5.00</li>
-          </ul>
         </div>
-
       </div>
-    </div>
 
-    <!-- Cool Student-centric developer footer -->
-    <footer class="app-footer">
-      <p>Created and Developed by <a href="https://kaushaldev.qzz.io" target="_blank">Kaushal Dev</a></p>
-    </footer>
+      <!-- Saved calculations list -->
+      <div class="history-card">
+        <div class="panel-header">
+          <h2>Saved Student Calculations</h2>
+          <button class="btn btn-secondary" style="width: auto; padding: 6px 12px; font-size: 0.75rem;"
+            onclick="clearAllHistory()">
+            Delete All History
+          </button>
+        </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Student Info</th>
+                <th>Entry Mode</th>
+                <th>Earned Credits</th>
+                <th>Consolidated CGPA</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="history-rows">
+              <!-- Dynamically listed -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 3. SCHEME/INFO TAB -->
+  <div id="help-tab" class="tab-content">
+    <div class="info-grid">
+
+      <div class="info-card">
+        <h2>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="16" y1="13" x2="8" y2="13" />
+            <line x1="16" y1="17" x2="8" y2="17" />
+            <polyline points="10 9 9 9 8 9" />
+          </svg>
+          Regulation 2023 Scheme Details
+        </h2>
+        <p>
+          Curriculum and Grading system guidelines for Diploma Computer Engineering under Regulation 2023. Prepared by
+          students for convenience.
+        </p>
+
+        <h3>Grading & Grade Points System</h3>
+        <ul>
+          <li><strong>O Grade (Outstanding):</strong> 10 Grade Points</li>
+          <li><strong>A+ Grade (Excellent):</strong> 9 Grade Points</li>
+          <li><strong>A Grade (Very Good):</strong> 8 Grade Points</li>
+          <li><strong>B+ Grade (Good):</strong> 7 Grade Points</li>
+          <li><strong>B Grade (Above Average):</strong> 6 Grade Points</li>
+          <li><strong>C Grade (Satisfactory):</strong> 5 Grade Points</li>
+          <li><strong>RA (Re-Appearance):</strong> 0 Grade Points</li>
+        </ul>
+
+        <h3>Entry Options</h3>
+        <ul>
+          <li><strong>Regular Entry:</strong> Students complete 6 semesters starting from Semester I. Total credits
+            are accumulated across all subjects.</li>
+          <li><strong>Lateral Entry:</strong> Eligible students join directly in the second year (Semester III).
+            Semesters I and II are excluded from both credit and CGPA evaluations.</li>
+        </ul>
+
+        <h3>Advanced Skills Certification (ASC)</h3>
+        <p>
+          Certain semesters include Advanced Skills Certifications (ASC) marked with <strong>(NA)</strong> option.
+          These courses can be marked as "NA" (Not Applicable) if they were not taken, in which case their credits are
+          bypassed.
+        </p>
+      </div>
+
+      <div class="info-card">
+        <h2>Formula Guidelines</h2>
+
+        <h3>Semester GPA (SGPA)</h3>
+        <div class="formula-box">
+          <span>SGPA =</span>
+          <span class="formula-fraction">
+            <span class="numerator">Σ (Course Credits × Grade Points)</span>
+            <span class="denominator">Σ (Course Credits)</span>
+          </span>
+        </div>
+
+        <h3>Cumulative GPA (CGPA)</h3>
+        <div class="formula-box">
+          <span>CGPA =</span>
+          <span class="formula-fraction">
+            <span class="numerator">Σ (All Earned Points)</span>
+            <span class="denominator">Σ (All Course Credits)</span>
+          </span>
+        </div>
+
+        <h3>Division Standards</h3>
+        <ul>
+          <li><strong>First Class with Distinction:</strong> CGPA ≥ 7.50</li>
+          <li><strong>First Class:</strong> CGPA ≥ 6.50</li>
+          <li><strong>Second Class:</strong> CGPA ≥ 5.00</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Cool Student-centric developer footer -->
+  <footer class="app-footer">
+    <p>Created and Developed by <a href="https://kaushaldev.qzz.io" target="_blank">Kaushal Dev</a></p>
+  </footer>
 
   </div>
 
@@ -1584,6 +1582,7 @@
           { name: 'Web Designing', credits: 3, na: false },
           { name: 'Operating Systems', credits: 2, na: false },
           { name: 'Advanced Skills Certification – 3', credits: 2, na: true },
+          { name: 'Health and Wellness', credits: 1, na: false },
         ]
       },
       4: {
@@ -1793,7 +1792,8 @@
 
       if (cgpaEl && creditsEl) {
         cgpaEl.textContent = cgpa.toFixed(2);
-        creditsEl.textContent = `${totalCredits} / 120 Credits Earned`;
+        const maxCredits = mode === 'lateral' ? 80 : 120;
+        creditsEl.textContent = `${totalCredits} / ${maxCredits} Credits Earned`;
       }
 
       return {
@@ -2004,7 +2004,7 @@
               ${rec.mode === 'lateral' ? 'Lateral Entry' : 'Regular Route'}
             </span>
           </td>
-          <td>${rec.credits} / 120</td>
+          <td>${rec.credits} / ${rec.mode === 'lateral' ? 80 : 120}</td>
           <td><span class="history-cgpa">${rec.cgpa.toFixed(2)}</span></td>
           <td>
             <div class="actions-cell">
@@ -2026,7 +2026,7 @@
       // Calculate consolidated analytics from the latest saved calculation
       const latest = history[0];
       document.getElementById('dash-cgpa').textContent = latest.cgpa.toFixed(2);
-      document.getElementById('dash-credits').textContent = latest.credits + ' / 120';
+      document.getElementById('dash-credits').textContent = latest.credits + ' / ' + (latest.mode === 'lateral' ? 80 : 120);
 
       // Calculate Divisions & standings
       let standing = 'Satisfactory';
@@ -2328,7 +2328,7 @@
           <div class="print-summary">
             <div class="print-summary-box">
               <div style="font-size: 13px; color: #444;">Credits Accumulated</div>
-              <div style="font-size: 20px; font-weight: bold; margin-bottom: 8px;">${record.credits} / 120</div>
+              <div style="font-size: 20px; font-weight: bold; margin-bottom: 8px;">${record.credits} / ${record.mode === 'lateral' ? 80 : 120}</div>
               <div style="font-size: 13px; color: #444;">Consolidated CGPA</div>
               <div style="font-size: 26px; font-weight: bold; color: black;">${record.cgpa.toFixed(2)}</div>
               <div style="font-size: 13px; font-weight: bold; margin-top: 4px;">Classification: ${division}</div>
